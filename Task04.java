@@ -10,23 +10,16 @@ public class Task04 {
 		b = 456;
 		c = 48;
 
-		naim(a, b, c);
+		naim(a, b, c); 
+		
 	}
 
 	public static int naim(int a, int b, int c) {
-		int q, w, e, z, z1, z2, g;
-		q = 0;
-		w = 0;
-		e = 0;
-		z = 1;
-		z1 = 1;
-		z2 = 1;
-		int m, n, l;
-
-		int t, k, p, p1;
-
-		int a1, b1, c1;
-		// определяю наибольшее число из 3х
+		
+		  int g;
+		  int t, k, p;
+		  
+		// определяю наибольшее и наименьшее число из 3х
 		if (a < b) {
 			t = a;
 			a = b;
@@ -42,58 +35,39 @@ public class Task04 {
 			c = b;
 			b = p;
 		}
-
-		System.out.println("a = " + a + ", b = " + b + ", c = " + c);
-
-		for (int i = 2; i <= a; i++) {
-
-			// a1 = a;
-			while (a % i == 0) {
-				q = i;
-				m = a / q;
-				a = m;
-				System.out.println("Делитель числа a = " + a + ", q = " + q);
-			}
-
-		}
-
-		for (int j = 2; j <= b; j++) {
-
-			// b1 = b;
-			while (b % j == 0) {
-				w = j;
-				n = b / w;
-				b = n;
-				System.out.println("Делитель числа b = " + b + ", w = " + w);
+		int nod_cb = c;
+		
+		for(; nod_cb > 1; nod_cb --) {	
+		    if(c % nod_cb == 0 && b % nod_cb == 0)
+			{
+				System.out.println("nod_cb = "+nod_cb);             				
 			}
 		}
-
-		for (int h = 2; h <= c; h++) {
-			// c1 = c;
-			while (c % h == 0) {
-				e = h;
-				l = c / e;
-				c = l;
-				System.out.println("Делитель числа c = " + c + ", e = " + e);
-			}
-
+		
+		int nod_ab = b;
+		
+		for (; nod_ab > 1; nod_ab--) {
+		    if(b % nod_ab == 0 && a % nod_ab == 0)
+		    {
+			    System.out.println("nod_ab = "+nod_ab);                  
+		    }
 		}
-		// if (e==w) {z = z * e; System.out.println("общий делитель b и c "+ z);}
-		// if ((q != w)) {z1 = z1 * q; System.out.println("общий делитель a, b и c "+
-		// z1);} //(q == e) &
-		// if ((q != e)) {z2 = z2 * q; System.out.println("общий делитель a, b и c "+
-		// z2);}
-		// else System.out.println("общий делитель a, b и c "+ 1);
-
-		/*
-		 * if (e!=w) { z = z * e; z1 = z1 * w; System.out.println("z = "+ z + ", z1 = "+
-		 * z1);}
-		 */
-
-		// if (e==w) {z = z * e; System.out.println("общий делитель b и c "+ z);}
-
-		g = (a * b * c) / z;
-		System.out.println("наименьший общий кратный " + g);
-		return c;
+		
+		 int nod_ac = c;
+			
+		 for (; nod_ac>1; nod_ac--) {
+		    if(c % nod_ac == 0 && a % nod_ac == 0)
+			{
+				System.out.println("nod_ac = "+nod_ac);              
+			}  
+		 } 
+			
+			if (nod_ac % nod_cb == 0) {g = (a * (b/nod_ab)) * (c/nod_ac) ; System.out.println("наименьший общий кратный " + g);
+			} else {g = (a * (b/nod_ab)) * ((c/nod_ac)/nod_cb) ; System.out.println("///наименьший общий кратный " + g);
+				
+			}
+		
+		return g;
 	}
-}
+	
+	}
