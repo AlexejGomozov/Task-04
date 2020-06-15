@@ -2,7 +2,7 @@ package by.htp.decomposition.logic;
 
 //Написать метод(методы) для нахождения наименьшего общего кратного трех натуральных чисел. 
 
-public class Task04 {
+public class Task04 {                                                //not done yet
 	public static void task() {
 
 		int a, b, c;
