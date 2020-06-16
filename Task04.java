@@ -2,17 +2,18 @@ package by.htp.decomposition.logic;
 
 //Написать метод(методы) для нахождения наименьшего общего кратного трех натуральных чисел. 
 
-public class Task04 {                                                //not done yet
+public class Task04 {
 	public static void task() {
 
 		int a, b, c;
-		a = 138;
-		b = 456;
-		c = 48;
+		a = 23;
+		b = 8917;                              //not done yet
+		c = 27923;
 
 		naim(a, b, c); 
 		
-	}
+	}                 //должно вывести: ......   наименьший общий кратный 5726755993
+                //а вот что у меня ...   a = 27923, b = 8917, c = 23. nod_ac = 1, nod_ab = 1. Наименьший общий кратный 1431788697
 
 	public static int naim(int a, int b, int c) {
 		
@@ -35,34 +36,36 @@ public class Task04 {                                                //not done 
 			c = b;
 			b = p;
 		}
+	                	System.out.println("a = "+a + ", b = "+ b + ", c = "+ c);       
+	                	
 		int nod_cb = c;
 		
-		for(; nod_cb > 1; nod_cb --) {	
-		    if(c % nod_cb == 0 && b % nod_cb == 0)
-			{
+		for( int i = 2; i <= c; i ++) {	
+		    if(c % i == 0 && b % i == 0)
+			{   nod_cb = i;
 				System.out.println("nod_cb = "+nod_cb);             				
-			}
-		}
+			}  else {nod_cb = 1; System.out.println("nod_cb = "+nod_cb); }
+		}	
 		
 		int nod_ab = b;
 		
-		for (; nod_ab > 1; nod_ab--) {
-		    if(b % nod_ab == 0 && a % nod_ab == 0)
-		    {
+           for (int j = 2; j <= b; j++) {
+		    if(b % j == 0 && a % j == 0)
+		    {   nod_ab = j;
 			    System.out.println("nod_ab = "+nod_ab);                  
-		    }
-		}
+		    } else {nod_ab = 1; System.out.println("nod_ab = "+nod_ab); }
+		}	
 		
-		 int nod_ac = c;
+		 int nod_ac = c;                       
 			
-		 for (; nod_ac>1; nod_ac--) {
-		    if(c % nod_ac == 0 && a % nod_ac == 0)
-			{
+		 for (int h = 2; h <= c; h ++) {
+		    if(c % h == 0 && a % h == 0)
+			{    nod_ac = h;
 				System.out.println("nod_ac = "+nod_ac);              
-			}  
+			}   else {nod_ac = 1; System.out.println("nod_ac = "+nod_ac); }
 		 } 
 			
-			if (nod_ac % nod_cb == 0) {g = (a * (b/nod_ab)) * (c/nod_ac) ; System.out.println("наименьший общий кратный " + g);
+			if (nod_ac % nod_cb == 0)  {g = a * (b/nod_ab) * (c/nod_ac); ; System.out.println("a = "+ a + ", b = "+b+", c = "+c+". nod_ac = " + nod_ac + ", nod_ab = "+ nod_ab + ". Наименьший общий кратный " + g);
 			} else {g = (a * (b/nod_ab)) * ((c/nod_ac)/nod_cb) ; System.out.println("///наименьший общий кратный " + g);
 				
 			}
