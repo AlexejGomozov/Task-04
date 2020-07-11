@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Task11 {
 public static void task() {
 	
-	int [] D = new int [10];                       //{D[0],D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8]};
+	int [] D = new int [10];                       //{D[0],D[1],D[2],D[3],D[4],D[5],D[6],D[7],D[8],D[9]};
 	for( int i =0; i<D.length; i++) {
 				
 		D[i] = (int)(Math.random()*100 + 1);
@@ -31,7 +31,7 @@ public static void task() {
 	     int x = sc.nextInt();                 
 	     System.out.println ("" + x);
 	     
-	     if((x>=(D.length-3)) & (x < D.length)) sum = D[D.length-1] + D[D.length-2] + D[D.length-3]; //если введенное число меньше 3х последних длинны массива, то производим сумму трех последних значений массаива
+	     if((x>=(D.length-3)) & (x < D.length)) sum = D[D.length-1] + D[D.length-2] + D[D.length-3]; //если введенное число меньше 3х последних длинны массива, то производим сумму трех последних значений массива
 	     else {for( int i = x; i < (x+3); i++)                                                       // или считаем сумму 3х значений после введенного (включительно) значения массива
 	           sum  = sum + D[i];}
 		                                   
