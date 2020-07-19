@@ -9,41 +9,41 @@ package by.htp.decomposition.logic;
 
        public class Task20 {
                         	
-	    static int count = 0;                                    //счетчик 
+	  static int count = 0;                                           //счетчик 
 	
 	      public static int subtractAmount(int x) {
 		
-		    String stringSubAmnt = String.valueOf(x);       
+		 String stringSubAmnt = String.valueOf(x);       
 		
-		      int lengthSubAmnt = stringSubAmnt.length();         // количество цифр для суммы в данном числе
+		    int lengthSubAmnt = stringSubAmnt.length();           // количество цифр для суммы в данном числе
 		
-		        int sum = 0;
+		       int sum = 0;
 			
-		          int x1 = x;                                    //переименовал данное число чтобы из него выделить цифры 
+		          int x1 = x;                                     //переименовал данное число чтобы из него выделить цифры 
 		                                                          //и чтобы эта работа с числом не изменила данное число(его значение понадобится в return)
-		            for (int i = 1; i<=lengthSubAmnt; i++) {
+		             for (int i = 1; i<=lengthSubAmnt; i++) {
 			
-			         int s = x1 % 10;
+			        int s = x1 % 10;
 			
-			           x1 = x1/10;
+			            x1 = x1/10;
 			
-			            sum += s;
+			               sum += s;
 			 
-		                  } 
-		                   count ++;
+		                          } 
+		                           count ++;
 		                   
-		                    if (sum <= 0) return count;             //возвращаем счетчик
+		                             if (sum <= 0) return count;             //возвращаем счетчик
 		                    
-		                      return subtractAmount(x - sum);       // рекурсия до тех пор пока не получится '0'
-	                           }
+		                               return subtractAmount(x - sum);       // рекурсия до тех пор пока не получится '0'
+	                                         }
 		
-	                          public static void task() {
+	                                        public static void task() {
 		
-		                   int a = 2339;                             //здесь можно использовать Scanner or random
+		                            int a = 2339;                             //здесь можно использовать Scanner or random
 		
-		               System.out.println("Из числа "+ a + " вычли сумму его цифр. \n "
+		                    System.out.println("Из числа "+ a + " вычли сумму его цифр. \n "
 		            		   
-		       	+ "Это сделали " + subtractAmount(a) + " раз(а), пока не получился '0'.");
+		           + "Это сделали " + subtractAmount(a) + " раз(а), пока не получился '0'.");
 		
-	          }
-          }
+	             }
+              }
