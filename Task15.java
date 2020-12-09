@@ -43,7 +43,7 @@ import java.util.Arrays;
 	   
 	          System.out.println("B[last]  = " + B[(x/y)-1]);
 	          
-	         if (B[((x/y)+2)-1] < y) return arrayB(x,y);       // если последнее число больше "y", возвращаем метод на подбор других значений
+	         if (B[((x/y)+2)-1] > y) return arrayB(x,y);       // если последнее число больше "y", возвращаем метод на подбор других значений
 	        
 	          return B; 
         }
