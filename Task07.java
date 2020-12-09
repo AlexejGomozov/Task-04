@@ -9,47 +9,49 @@ package by.htp.decomposition.logic;
 */
 
 public class Task07 {
-
+	
 	public static double [] x;
 	public static double [] y;
+
+	public static void task() {
+	    Task07 an = new Task07();
+		an.res (x, y);  
+	}
 	
-	void res (double []x, double []y){
+	        void res (double []x, double []y){
 	
-	     x = new double [3];
-		 y = new double [3];
+	              x = new double [3];
+		         y = new double [3];
 		
-		 for (int i = 0; i<3; i++) {
-			x [i] = Math.floor(Math.random()*10 +1);
-			y [i] = Math.floor(Math.random()*10 +1);
+		           for (int i = 0; i<3; i++) {
+			     x [i] = Math.floor(Math.random()*10 +1);
+			       y [i] = Math.floor(Math.random()*10 +1);
 		
-		    System.out.println("x" + (i + 1) + " = " + x[i] + " y" + (i+1)+" = "+y[i]);
-	     }
+		                  System.out.println("x" + (i + 1) + " = " + x[i] + " y" + (i+1)+" = "+y[i]);
+	         }
 				
 	     double [] result = new double [3];
 		 
-	      for( int i =0; i<3; i++) {
-		        result[i] = Math.sqrt((Math.pow(x[i] - x[result.length-1], 2)) + (Math.pow(y[i] - y[result.length-1],2)));
-		        System.out.println("Distance = " + result[i]);
+	       for( int i =0; i<3; i++) {
+		 result[i] = Math.sqrt((Math.pow(x[i] - x[result.length-1], 2)) + (Math.pow(y[i] - y[result.length-1],2)));
+		      System.out.println("Distance = " + result[i]);
 	      }	
-	 m(result);           
-	}
+	             m(result);           
+	      }
 	
 	public static double m(double [] result) {
 			
 	     double max = result[0];
 	     
-	     for(int j = 1; j<result.length; j++) 
+	         for(int j = 1; j<result.length; j++) 
 	    	 
-		 max = Math.max(result[j], max);
+		     max = Math.max(result[j], max);
 	
-	     System.out.println("The Maximum value is : " + max);
-	return max;
+	                 System.out.println("The Maximum value is : " + max);
+	                    return max;
     }
 		
-	public static void task() {
-		Task07 an = new Task07();
-		an.res (x, y);  
-	}}
+	}
 	
 	
 	
